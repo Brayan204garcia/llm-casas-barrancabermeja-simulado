@@ -1,6 +1,28 @@
 [project]
 name = "llmcasasbca"
 version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "annotated-types",
+    "anyio",
+    "certifi",
+    "click",
+    "colorama",
+    "distro",
+    "fastapi",
+    "groq",
+    "h11",
+    "httpcore",
+    "httpx",
+    "idna",
+    "pydantic",
+    "pydantic-core",
+    "python-dotenv",
+    "sniffio",
+    "starlette",
+    "typing-extensions",
+    "uvicorn",
+]
 
 [project.scripts]
 app = "app.main:app"
