@@ -1,7 +1,7 @@
 
 from pydantic import BaseModel, field_validator
 
-from llmcasasbca.app.enums.barrio import BarrioEnum
+from app.enums.barrio import BarrioEnum
 
 
 class CasaCreate(BaseModel):

@@ -1,9 +1,8 @@
 from fastapi import APIRouter
-from pydantic_settings import BaseSettings
 
-from llmcasasbca.app.schemas.Casa import CasaCreate
-from llmcasasbca.app.schemas.prediccion import PrediccionResponse
-from llmcasasbca.app.services.prediccion_services import PrediccionService
+from app.schemas.Casa import CasaCreate
+from app.schemas.prediccion import PrediccionResponse
+from app.services.prediccion_services import PrediccionService
 
 
 router = APIRouter(prefix="/prediccion", tags=["prediccion"])
