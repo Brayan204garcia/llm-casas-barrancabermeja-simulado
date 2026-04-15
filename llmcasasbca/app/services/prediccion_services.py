@@ -5,7 +5,7 @@ import os
 from anyio.functools import lru_cache
 from pydantic_settings import SettingsConfigDict, BaseSettings
 
-from llmcasasbca.app import main
+from llmcasasbca.app import index
 from llmcasasbca.app.schemas.Casa import  CasaCreate
 from groq import AsyncGroq, RateLimitError
 
