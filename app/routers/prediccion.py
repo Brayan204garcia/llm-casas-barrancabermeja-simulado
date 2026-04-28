@@ -9,5 +9,5 @@ router = APIRouter(prefix="/prediccion", tags=["prediccion"])
 servicio = PrediccionService()
 
 @router.post("/", response_model=PrediccionResponse)
-async def prediccion(valores_casa : CasaCreate):
+async def prediccion(valores_casa : CasaCreate) -> PrediccionResponse:
     return await servicio.predecir_precio(casa_create=valores_casa)

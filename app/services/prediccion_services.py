@@ -1,5 +1,6 @@
 
 import json
+from pathlib import Path
 
 from anyio.functools import lru_cache
 from pydantic_settings import SettingsConfigDict, BaseSettings
@@ -9,9 +10,13 @@ from groq import AsyncGroq, RateLimitError
 
 from app.schemas.prediccion import PrediccionResponse, PrediccionData
 
+
+BASE = Path(r"C:\Users\Asus\proyectos\llmcasasbca")
+env_ruta = BASE / ".env"
+
 class Settings(BaseSettings):
     groq_api_key : str
-    model_config = SettingsConfigDict(env_file="llmcasasbca/.env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(env_file=env_ruta, env_file_encoding="utf-8")
 
 @lru_cache
 def get_settings():
@@ -67,7 +72,7 @@ class PrediccionService:
         except RateLimitError:
             print("SE AGOTARON LOS TOKENS DE LA APIKEY, VUELVA A INTENTARLO EN UNAS HORAS")
 
-    async def predecir_precio(self, casa_create : CasaCreate) -> dict:
+    async def predecir_precio(self, casa_create : CasaCreate) -> PrediccionResponse:
         """PENDIENTE"""
         #Construyendo los parametros de la casa a JSON, para el llm
         casa_create_json = casa_create.model_dump_json()
