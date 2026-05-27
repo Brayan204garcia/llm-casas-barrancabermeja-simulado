@@ -16,13 +16,16 @@ dependencies = [
     "httpcore",
     "httpx",
     "idna",
+    "pandas",
     "pydantic",
     "pydantic-core",
     "python-dotenv",
+    "scikit-learn",
     "sniffio",
     "starlette",
     "typing-extensions",
     "uvicorn",
+    "xgboost",
 ]
 
 [project.scripts]
